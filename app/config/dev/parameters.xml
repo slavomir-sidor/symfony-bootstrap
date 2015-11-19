@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container
+	xmlns="http://symfony.com/schema/dic/services"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+	<imports>
+		<import resource="../parameters.xml" />
+	</imports>
+
+	<parameters>
+
+		<parameter key="kernel.debug">true</parameter>
+		<parameter key="framework.profiler.enabled">true</parameter>
+		<parameter key="framework.router.resource">%kernel.root_dir%/config/dev/routing.xml</parameter>
+
+		<!-- Assetic -->
+		<parameter key="assetic.use_controller">TRUE</parameter>
+
+		<!-- Web Profiler -->
+		<parameter key="webprofiler.toolbar">true</parameter>
+		<parameter key="webprofiler.verbose">true</parameter>
+		<parameter key="webprofiler.position">bottom</parameter>
+		<parameter key="webprofiler.intercept_redirects">true</parameter>
+		<parameter key="webprofiler.excluded_ajax_paths">^/bundles|^/_wdt</parameter>
+
+	</parameters>
+
+</container>

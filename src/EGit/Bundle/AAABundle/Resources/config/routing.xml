@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<routes
+	xmlns="http://symfony.com/schema/routing"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+
+	<route
+		id="e_git_aaa_homepage"
+		path="/{_locale}">
+		<default key="_controller">EGitAAABundle:Default:index</default>
+		<default key="_locale">%framework.translator.fallback%</default>
+		<requirement key="_locale">%framework.translator.locales%</requirement>
+	</route>
+
+	<route
+		id="e_git_aaa_detail"
+		path="/{_locale}/detail/{id}">
+		<default key="_controller">EGitAAABundle:Default:detail</default>
+		<default key="_locale">%framework.translator.fallback%</default>
+		<requirement key="_locale">%framework.translator.locales%</requirement>
+	</route>
+
+	<route
+		id="e_git_aaa_fullfill"
+		path="/fullfill">
+		<default key="_controller">EGitAAABundle:Default:fullfill</default>
+	</route>
+
+</routes>

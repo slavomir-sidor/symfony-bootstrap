@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping
+	xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+	<entity
+		name="EGit\Bundle\AAABundle\Entity\Car"
+		table="car">
+		<id
+			name="id"
+			type="integer"
+			column="ID">
+			<generator strategy="IDENTITY" />
+		</id>
+		<field
+			name="make"
+			type="string"
+			column="Make"
+			length="255"
+			nullable="false" />
+		<field
+			name="model"
+			type="string"
+			column="Model"
+			length="255"
+			nullable="false" />
+		<field
+			name="year"
+			type="smallint"
+			column="Year"
+			nullable="false" />
+		<field
+			name="clock"
+			type="integer"
+			column="Clock"
+			nullable="false" />
+		<field
+			name="bodytype"
+			type="string"
+			column="Bodytype"
+			length="255"
+			nullable="false" />
+		<field
+			name="price"
+			type="float"
+			column="Price"
+			precision="10"
+			scale="0"
+			nullable="false" />
+		<field
+			name="engine"
+			type="string"
+			column="Engine"
+			length="255"
+			nullable="false" />
+	</entity>
+</doctrine-mapping>

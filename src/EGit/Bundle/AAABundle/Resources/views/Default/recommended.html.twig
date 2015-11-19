@@ -1,0 +1,48 @@
+{% block recommended %}
+<div class="auto-list recommend">
+
+    <h1>
+        {%trans%}Doporucujeme{%endtrans%}
+    </h1>
+    
+    {% for car in recomendedCars %}
+    <div class="item">
+
+        <h2>
+            <a href="{{ path('e_git_aaa_detail', { 'id': car.id}) }}">
+                {{ car.make }} {{ car.model }} {{ car.year }}
+            </a>
+        </h2>
+
+        <h3>
+            {{ car.engine }}, {{ car.clock|number_format(0, '.', ',') }} km
+        </h3>
+
+        {% set index=(auto.id % 3) +1 %}
+        {% set imagePath='/bundles/egitaaa/images/cars/' ~ index ~ '.jpg' %}
+
+        <a href="{{ path('e_git_aaa_detail', { 'id': car.id}) }}">
+            <img src="{{ asset(imagePath) }}"
+                 alt="{{ car.make }} {{ car.model }} {{ car.year }}" />
+        </a>
+
+        <div class="price">
+            <div>{{ car.price|number_format(0, '.', ',') }} Kč</div>
+        </div>
+
+    </div>
+    {% endfor %}
+
+    <div class="item banner">
+
+        {% image '@EGitAAABundle/Resources/public/images/offering-banner.png' %}
+        <img src="{{ asset_url }}"
+             alt="Karel Loprais" />
+        {% endimage %}
+
+    </div>
+
+    <div class="cleaner"></div>
+
+</div>
+{% endblock %}

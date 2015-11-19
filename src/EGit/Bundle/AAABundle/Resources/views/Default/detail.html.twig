@@ -1,0 +1,29 @@
+{% extends 'EGitAAABundle::base.html.twig' %}
+
+{% block content %}
+    <div class="item">
+    
+        <h2>
+            <a href="{{ path('e_git_aaa_detail', { 'id': auto.id}) }}">
+                {{ auto.make }} {{ auto.model }} {{ auto.year }}
+            </a>
+        </h2>
+
+        <h3>{{ auto.engine }}, {{ auto.clock|number_format(0, '.', ',') }} km</h3>
+
+        {% set index=(auto.id % 3) +1 %}
+        {% set imagePath='/bundles/egitaaa/images/cars/' ~ index ~ '.jpg' %}
+
+        <a href="{{ path('e_git_aaa_detail', { 'id': auto.id}) }}">
+            <img src="{{ asset(imagePath) }}"
+                 alt="{{ auto.make }} {{ auto.model }} {{ auto.year }}" />
+        </a>
+
+        <div class="price">
+            <div>{{ auto.price|number_format(0, '.', ',') }} Kč</div>
+        </div>
+
+    </div>
+    {% include "EGitAAABundle::Default/recommended.html.twig" with {'recomendedCars':recomendedCars} %}
+
+{% endblock %}

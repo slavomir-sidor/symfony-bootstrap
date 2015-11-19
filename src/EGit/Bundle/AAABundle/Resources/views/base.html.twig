@@ -1,0 +1,65 @@
+{% block html %}
+<!DOCTYPE html>
+<html>
+
+    {% block head %}
+        <head>
+            <meta charset="UTF-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=9" />
+            <title>{% block title %}{% trans %}Mototechna{% endtrans %}{% endblock %}</title>
+
+            {% block stylesheets %}
+
+                {% stylesheets
+                    'bundles/egitaaa/css/style.css'
+
+                    filter="cssrewrite"
+                    output="css/compiled/style.css"
+                %}
+
+                <link
+                    href="{{ asset_url }}"
+                    media="screen" 
+                    rel="stylesheet"
+                    type="text/css" />
+
+                {% endstylesheets %}
+
+            {% endblock %}
+
+            {% block javascript %}
+
+                {% javascripts output="js/compiled/script.js" %}
+                    <script src="{{ asset_url }}" type="text/javascript"></script>
+                {% endjavascripts %}
+
+                {% block javaScriptHeaderCode %}
+                    
+                {% endblock %}
+
+            {% endblock %}
+
+        </head>
+    {% endblock %}
+
+    {% block body %}
+        <body>
+
+             <div class="layout">
+
+                 <a href="{{ path('e_git_aaa_homepage')}}">
+                     {% image '@EGitAAABundle/Resources/public/images/logo.png' %}
+                     <img src="{{ asset_url }}" alt="Mototechna logo" />
+                     {% endimage %}
+                 </a>
+
+                {% block content %}
+                {% endblock %}
+
+            </div>
+
+        </body>
+    {% endblock %}
+
+</html>
+{% endblock %}
