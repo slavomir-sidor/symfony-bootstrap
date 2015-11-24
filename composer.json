@@ -20,8 +20,7 @@
 		"symfony/monolog-bundle" : "~2.4",
 		"sensio/distribution-bundle" : "~4.0",
 		"sensio/framework-extra-bundle" : "~3.0,>=3.0.2",
-		"incenteev/composer-parameter-handler" : "~2.0",
-		"sk.itcloud/sk.itcloud.symfony.bundle.itc" : "dev-master"
+		"incenteev/composer-parameter-handler" : "~2.0"
 	},
 	"require-dev" : {
 		"sensio/generator-bundle" : "~2.3"
@@ -51,10 +50,5 @@
 		"symfony-app-dir" : "app",
 		"symfony-web-dir" : "web",
 		"symfony-assets-install" : "relative"
-	},
-	"repositories" : [{
-			"type" : "vcs",
-			"url" : "file://ssh://git.itc/git/sk.itcloud.symfony/sk.itcloud.symfony.bundle.itc.git"
-		}
-	]
+	}
 }

@@ -17,4 +17,4 @@
 /logs/
 /.mozilla/
 /cgi-bin/
-/target/
+/target//composer.lock
